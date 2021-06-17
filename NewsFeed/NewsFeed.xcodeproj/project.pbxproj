@@ -17,10 +17,10 @@
 		75BD4A35267B82DB00F78806 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A33267B82DB00F78806 /* NewsTableViewCell.swift */; };
 		75BD4A36267B82DB00F78806 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BD4A34267B82DB00F78806 /* NewsTableViewCell.xib */; };
 		75BD4A38267B868000F78806 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A37267B868000F78806 /* NewsModel.swift */; };
-		75BD4A3A267B87DA00F78806 /* NewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A39267B87DA00F78806 /* NewData.swift */; };
 		75BD4A3C267B95A300F78806 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A3B267B95A300F78806 /* DetailViewController.swift */; };
 		75BD4A3F267B9BC100F78806 /* MyGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A3E267B9BC100F78806 /* MyGesture.swift */; };
 		75BD4A41267BA0C000F78806 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A40267BA0C000F78806 /* ZoomViewController.swift */; };
+		75BD4A43267BA9AA00F78806 /* NewsModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A42267BA9AA00F78806 /* NewsModel1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +36,10 @@
 		75BD4A33267B82DB00F78806 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		75BD4A34267B82DB00F78806 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		75BD4A37267B868000F78806 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		75BD4A39267B87DA00F78806 /* NewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewData.swift; sourceTree = "<group>"; };
 		75BD4A3B267B95A300F78806 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		75BD4A3E267B9BC100F78806 /* MyGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGesture.swift; sourceTree = "<group>"; };
 		75BD4A40267BA0C000F78806 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
+		75BD4A42267BA9AA00F78806 /* NewsModel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel1.swift; sourceTree = "<group>"; };
 		78456B687D1678860D376374 /* Pods-NewsFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsFeed.debug.xcconfig"; path = "Target Support Files/Pods-NewsFeed/Pods-NewsFeed.debug.xcconfig"; sourceTree = "<group>"; };
 		B7AE9E1AE6CC5992F2A5085B /* Pods_NewsFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				75BD4A37267B868000F78806 /* NewsModel.swift */,
-				75BD4A39267B87DA00F78806 /* NewData.swift */,
+				75BD4A42267BA9AA00F78806 /* NewsModel1.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,12 +259,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75BD4A3A267B87DA00F78806 /* NewData.swift in Sources */,
 				75BD4A41267BA0C000F78806 /* ZoomViewController.swift in Sources */,
 				75BD4A21267B811900F78806 /* HomeViewController.swift in Sources */,
 				75BD4A1D267B811900F78806 /* AppDelegate.swift in Sources */,
 				75BD4A35267B82DB00F78806 /* NewsTableViewCell.swift in Sources */,
 				75BD4A1F267B811900F78806 /* SceneDelegate.swift in Sources */,
+				75BD4A43267BA9AA00F78806 /* NewsModel1.swift in Sources */,
 				75BD4A38267B868000F78806 /* NewsModel.swift in Sources */,
 				75BD4A3C267B95A300F78806 /* DetailViewController.swift in Sources */,
 				75BD4A3F267B9BC100F78806 /* MyGesture.swift in Sources */,

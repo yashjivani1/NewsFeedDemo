@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 import SDWebImage
 class HomeViewController: UIViewController, WKNavigationDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var newsData = [NewsModel]()
@@ -19,15 +19,22 @@ class HomeViewController: UIViewController, WKNavigationDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NewsTableViewCell.nib(), forCellReuseIdentifier: NewsTableViewCell.identifier)
+        
         let url = URL(string: "https://newsapi.org/v2/everything?q=bitcoin&apiKey=30fc4844d5af4decbf374616f8eb9d76")
-       NewsModel.getData(url: url!) { news in
-        self.newsData = news
-        self.tableView.reloadData()
+        NewsModel.getData(url: url!) { news in
+            DispatchQueue.main.async { [self] in
+                self.newsData = news
+                
+                
+                self.tableView.reloadData()
+            }
         }
     }
-
-
+    
+    
 }
+
+
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
@@ -41,23 +48,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         let url = URL(string: newsData[indexPath.row].urlToImage)
         let imageView = UIImageView().sd_setImage(with: url, completed: nil)
         cell.newImageView?.sd_setImage(with: url, completed: nil)
-       
+        
         cell.editorName.text = newsData[indexPath.row].author
         cell.date.text = newsData[indexPath.row].publishedAt
         cell.newLink.isUserInteractionEnabled = true
         
-        let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue  ] as [NSAttributedString.Key : Any]
+        let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.blue, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue  ] as [NSAttributedString.Key : Any]
         let myAttrString = NSAttributedString(string: newsData[indexPath.row].url, attributes: myAttribute)
-
+        
         // set attributed text on a UILabel
-       
+        
         cell.newLink.attributedText = myAttrString
         let tap = MyTapGesture(target: self, action: #selector(linkTapped))
         tap.index = indexPath.row
-        cell.newLink.addGestureRecognizer(tap)
-        let imageTap = MyTapGesture(target: self, action: #selector(imageTapped))
-        cell.newImageView.addGestureRecognizer(imageTap)
-        cell.newImageView.isUserInteractionEnabled = true
+        
+        
         return cell
     }
     
@@ -80,7 +85,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 extension HomeViewController{
     @objc func linkTapped(sender : MyTapGesture){
         let webViewController = UIViewController()
-
+        
         let uiWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
         if let url = URL(string: newsData[sender.index].url) {
             uiWebView.loadRequest(
@@ -95,13 +100,6 @@ extension HomeViewController{
             animated: true)
     }
     
-    @objc func imageTapped(sender: MyTapGesture){
-        let image = UIImageView()
-        image.sd_setImage(with: URL(string: newsData[sender.index].urlToImage)) { image, _, _, _ in
-            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ZoomViewController") as? ZoomViewController
-            vc?.image = image
-            self.present(vc!, animated: true, completion: nil)
-        }
-    }
+    
 }
 
