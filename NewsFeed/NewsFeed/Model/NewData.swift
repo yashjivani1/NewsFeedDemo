@@ -8,7 +8,7 @@
 import Foundation
 
 struct NewData{
-    static var newData = [NewsModel]()
     
-    static func getData(url: URL, completionHan)
+    
+    
 }

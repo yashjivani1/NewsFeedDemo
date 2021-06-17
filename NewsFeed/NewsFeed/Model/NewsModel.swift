@@ -12,11 +12,12 @@ import Alamofire
 //30fc4844d5af4decbf374616f8eb9d76
 struct NewsModel{
     var title: String
-    var urlToImage: URL
-    var url: URL
+    var urlToImage: String
+    var url: String
     var author: String
     var publishedAt: String
-    
+    var content: String
+    var description: String
     static func getData(url: URL, completionHandler: @escaping([NewsModel]) -> Void){
 
          var news = [NewsModel]()
@@ -29,21 +30,23 @@ struct NewsModel{
 //         var request = URLRequest(url: urlTemp)
 //         request.httpMethod = "GET"
         
-        let request = AF.request("https://newsapi.org/v2/everything?q=bitcoin&apiKey=30fc4844d5af4decbf374616f8eb9d76")
+        let request = AF.request(url)
         
         request.responseData{ response in
             switch response.result{
             case .success(let data):
                 do{
                     let json = try JSON(data: data)
-                    
-                    for new in json.arrayValue{
+                   
+                    let array = json["articles"].arrayValue
+                    for new in array{
                         
                         
-                        users.append(NewsModel(title: new["title"], urlToImage: new["urlToImage"], url: new["url"], author: new["author"], publishedAt: new["publishedAt"]))
+                        news.append(NewsModel(title: new["title"].rawString()!, urlToImage: new["urlToImage"].rawString()!, url: new["url"].rawString()!, author: new["author"].rawString()!, publishedAt: new["publishedAt"].rawString()!, content: new["content"].rawString()!, description: new["description"].rawString()!))
                         
                         
                     }
+                   
                     completionHandler(news)
                 }catch{
                     print("Cannot parse data")
