@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import WebKit
 import SDWebImage
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     var newsData = [NewsModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NewsTableViewCell.nib(), forCellReuseIdentifier: NewsTableViewCell.identifier)
@@ -43,19 +44,64 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
        
         cell.editorName.text = newsData[indexPath.row].author
         cell.date.text = newsData[indexPath.row].publishedAt
-        cell.newLink.text = newsData[indexPath.row].url
+        cell.newLink.isUserInteractionEnabled = true
+        
+        let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue  ] as [NSAttributedString.Key : Any]
+        let myAttrString = NSAttributedString(string: newsData[indexPath.row].url, attributes: myAttribute)
+
+        // set attributed text on a UILabel
+       
+        cell.newLink.attributedText = myAttrString
+        let tap = MyTapGesture(target: self, action: #selector(linkTapped))
+        tap.index = indexPath.row
+        cell.newLink.addGestureRecognizer(tap)
+        let imageTap = MyTapGesture(target: self, action: #selector(imageTapped))
+        cell.newImageView.addGestureRecognizer(imageTap)
+        cell.newImageView.isUserInteractionEnabled = true
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        
         vc?.newData = newsData[indexPath.row]
         self.navigationController?.pushViewController(vc!, animated: true)
     }
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
     
+}
+
+extension HomeViewController{
+    @objc func linkTapped(sender : MyTapGesture){
+        let webViewController = UIViewController()
+
+        let uiWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+        if let url = URL(string: newsData[sender.index].url) {
+            uiWebView.loadRequest(
+                URLRequest(
+                    url: url))
+        }
+        uiWebView.frame = webViewController.view.bounds
+        webViewController.view.addSubview(uiWebView)
+        
+        navigationController?.pushViewController(
+            webViewController,
+            animated: true)
+    }
+    
+    @objc func imageTapped(sender: MyTapGesture){
+        let image = UIImageView()
+        image.sd_setImage(with: URL(string: newsData[sender.index].urlToImage)) { image, _, _, _ in
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ZoomViewController") as? ZoomViewController
+            vc?.image = image
+            self.present(vc!, animated: true, completion: nil)
+        }
+    }
 }
 

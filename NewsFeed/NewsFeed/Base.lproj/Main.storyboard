@@ -21,13 +21,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="8VV-L4-5HG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zrt-02-JYK" secondAttribute="trailing" id="CEX-Cs-6gx"/>
-                            <constraint firstItem="Zrt-02-JYK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iDs-fZ-glW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zrt-02-JYK" secondAttribute="bottom" id="ner-HW-EdS"/>
-                            <constraint firstItem="Zrt-02-JYK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZF-ch-LnK"/>
+                            <constraint firstItem="8VV-L4-5HG" firstAttribute="trailing" secondItem="Zrt-02-JYK" secondAttribute="trailing" id="CEX-Cs-6gx"/>
+                            <constraint firstItem="Zrt-02-JYK" firstAttribute="top" secondItem="8VV-L4-5HG" secondAttribute="top" id="iDs-fZ-glW"/>
+                            <constraint firstItem="8VV-L4-5HG" firstAttribute="bottom" secondItem="Zrt-02-JYK" secondAttribute="bottom" id="ner-HW-EdS"/>
+                            <constraint firstItem="Zrt-02-JYK" firstAttribute="leading" secondItem="8VV-L4-5HG" secondAttribute="leading" id="rZF-ch-LnK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" largeTitleDisplayMode="always" id="cLW-GA-TFH"/>
@@ -85,27 +85,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="ZsO-k8-6Sz"/>
+                        <viewLayoutGuide key="safeArea" id="L2x-Q7-6gA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZsO-k8-6Sz" firstAttribute="trailing" secondItem="dmf-Vu-Or4" secondAttribute="trailing" constant="10" id="1Tc-mo-djY"/>
-                            <constraint firstItem="Vo3-xU-Ooj" firstAttribute="leading" secondItem="ZsO-k8-6Sz" secondAttribute="leading" constant="10" id="2d7-En-0Ea"/>
-                            <constraint firstItem="mdo-i5-b5m" firstAttribute="leading" secondItem="ZsO-k8-6Sz" secondAttribute="leading" constant="10" id="9hu-fw-ud7"/>
-                            <constraint firstItem="ZsO-k8-6Sz" firstAttribute="trailing" secondItem="BGu-Lq-EXg" secondAttribute="trailing" constant="10" id="BUP-6p-G5N"/>
-                            <constraint firstItem="YTr-se-gNP" firstAttribute="leading" secondItem="ZsO-k8-6Sz" secondAttribute="leading" constant="10" id="IBw-zK-9YY"/>
+                            <constraint firstItem="L2x-Q7-6gA" firstAttribute="trailing" secondItem="dmf-Vu-Or4" secondAttribute="trailing" constant="10" id="1Tc-mo-djY"/>
+                            <constraint firstItem="Vo3-xU-Ooj" firstAttribute="leading" secondItem="L2x-Q7-6gA" secondAttribute="leading" constant="10" id="2d7-En-0Ea"/>
+                            <constraint firstItem="mdo-i5-b5m" firstAttribute="leading" secondItem="L2x-Q7-6gA" secondAttribute="leading" constant="10" id="9hu-fw-ud7"/>
+                            <constraint firstItem="L2x-Q7-6gA" firstAttribute="trailing" secondItem="BGu-Lq-EXg" secondAttribute="trailing" constant="10" id="BUP-6p-G5N"/>
+                            <constraint firstItem="YTr-se-gNP" firstAttribute="leading" secondItem="L2x-Q7-6gA" secondAttribute="leading" constant="10" id="IBw-zK-9YY"/>
                             <constraint firstItem="dmf-Vu-Or4" firstAttribute="top" secondItem="rWi-tj-ns3" secondAttribute="bottom" constant="5" id="LYv-nT-zIc"/>
-                            <constraint firstItem="BGu-Lq-EXg" firstAttribute="leading" secondItem="ZsO-k8-6Sz" secondAttribute="leading" constant="10" id="O6j-fD-npe"/>
+                            <constraint firstItem="BGu-Lq-EXg" firstAttribute="leading" secondItem="L2x-Q7-6gA" secondAttribute="leading" constant="10" id="O6j-fD-npe"/>
                             <constraint firstItem="mdo-i5-b5m" firstAttribute="top" secondItem="Vo3-xU-Ooj" secondAttribute="bottom" constant="5" id="Qw3-tx-t2G"/>
-                            <constraint firstItem="ZsO-k8-6Sz" firstAttribute="trailing" secondItem="rWi-tj-ns3" secondAttribute="trailing" constant="10" id="THb-4U-UDC"/>
+                            <constraint firstItem="L2x-Q7-6gA" firstAttribute="trailing" secondItem="rWi-tj-ns3" secondAttribute="trailing" constant="10" id="THb-4U-UDC"/>
                             <constraint firstItem="rWi-tj-ns3" firstAttribute="top" secondItem="mdo-i5-b5m" secondAttribute="bottom" constant="5" id="VDV-7i-o4o"/>
-                            <constraint firstItem="ZsO-k8-6Sz" firstAttribute="trailing" secondItem="mdo-i5-b5m" secondAttribute="trailing" constant="10" id="WJf-j7-9yA"/>
-                            <constraint firstItem="YTr-se-gNP" firstAttribute="top" secondItem="ZsO-k8-6Sz" secondAttribute="top" constant="10" id="gUt-qn-rVp"/>
-                            <constraint firstItem="dmf-Vu-Or4" firstAttribute="leading" secondItem="ZsO-k8-6Sz" secondAttribute="leading" constant="10" id="ihh-2e-XZn"/>
-                            <constraint firstItem="ZsO-k8-6Sz" firstAttribute="trailing" secondItem="Vo3-xU-Ooj" secondAttribute="trailing" constant="10" id="o8c-a6-9HS"/>
+                            <constraint firstItem="L2x-Q7-6gA" firstAttribute="trailing" secondItem="mdo-i5-b5m" secondAttribute="trailing" constant="10" id="WJf-j7-9yA"/>
+                            <constraint firstItem="YTr-se-gNP" firstAttribute="top" secondItem="L2x-Q7-6gA" secondAttribute="top" constant="10" id="gUt-qn-rVp"/>
+                            <constraint firstItem="dmf-Vu-Or4" firstAttribute="leading" secondItem="L2x-Q7-6gA" secondAttribute="leading" constant="10" id="ihh-2e-XZn"/>
+                            <constraint firstItem="L2x-Q7-6gA" firstAttribute="trailing" secondItem="Vo3-xU-Ooj" secondAttribute="trailing" constant="10" id="o8c-a6-9HS"/>
                             <constraint firstItem="BGu-Lq-EXg" firstAttribute="top" secondItem="YTr-se-gNP" secondAttribute="bottom" constant="10" id="uek-d4-tTu"/>
                             <constraint firstItem="Vo3-xU-Ooj" firstAttribute="top" secondItem="BGu-Lq-EXg" secondAttribute="bottom" constant="5" id="wHP-Pp-skN"/>
-                            <constraint firstItem="rWi-tj-ns3" firstAttribute="leading" secondItem="ZsO-k8-6Sz" secondAttribute="leading" constant="10" id="zLq-dl-hoE"/>
-                            <constraint firstItem="ZsO-k8-6Sz" firstAttribute="trailing" secondItem="YTr-se-gNP" secondAttribute="trailing" constant="10" id="zbB-al-ZuV"/>
+                            <constraint firstItem="rWi-tj-ns3" firstAttribute="leading" secondItem="L2x-Q7-6gA" secondAttribute="leading" constant="10" id="zLq-dl-hoE"/>
+                            <constraint firstItem="L2x-Q7-6gA" firstAttribute="trailing" secondItem="YTr-se-gNP" secondAttribute="trailing" constant="10" id="zbB-al-ZuV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -119,7 +119,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPj-rw-oFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1718.840579710145" y="73.660714285714278"/>
+            <point key="canvasLocation" x="1718.8405797101452" y="73.660714285714278"/>
+        </scene>
+        <!--Zoom View Controller-->
+        <scene sceneID="nNp-AQ-oqc">
+            <objects>
+                <viewController storyboardIdentifier="ZoomViewController" id="Bwc-bT-BUY" customClass="ZoomViewController" customModule="NewsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rES-uJ-JbI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-BH-TXw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QuX-Zz-uh9">
+                                        <rect key="frame" x="98" y="318" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cOO-hW-QDH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="QuX-Zz-uh9" id="pTs-if-FDa"/>
+                        <outlet property="scrollVie" destination="rW2-BH-TXw" id="fJQ-gg-afP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGM-6y-IdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vfh-EC-RfX">

@@ -22,7 +22,8 @@ class DetailViewController: UIViewController {
     var newData: NewsModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsImage.sd_setImage(with: URL(string: newData.url), completed: nil)
+        newsImage.sd_setImage(with: URL(string: newData.urlToImage), completed: nil)
+        
         titlenews.text = newData.title
         contentNews.text = newData.content
         date.text = newData.publishedAt
