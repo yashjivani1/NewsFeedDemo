@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var editor: UILabel!
     @IBOutlet weak var date: UILabel!
     
-    var newData: NewsModel!
+    var newData: ArticleModel!
     override func viewDidLoad() {
         super.viewDidLoad()
         newsImage.sd_setImage(with: URL(string: newData.urlToImage), completed: nil)

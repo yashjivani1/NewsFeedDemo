@@ -12,7 +12,7 @@ class HomeViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var newsData = [NewsModel]()
+    var newsData = [ArticleModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,12 +20,24 @@ class HomeViewController: UIViewController, WKNavigationDelegate {
         tableView.dataSource = self
         tableView.register(NewsTableViewCell.nib(), forCellReuseIdentifier: NewsTableViewCell.identifier)
         
+        var userDefaults = UserDefaults.standard
+        
+        if userDefaults.bool(forKey: "saved"){
+            let decoded  = userDefaults.data(forKey: "news")
+            let decodedNews = NSKeyedUnarchiver.unarchiveObject(with: decoded!) as! [ArticleModel]
+            newsData = decodedNews
+            tableView.reloadData()
+        }
+        
         let url = URL(string: "https://newsapi.org/v2/everything?q=bitcoin&apiKey=30fc4844d5af4decbf374616f8eb9d76")
         NewsModel.getData(url: url!) { news in
             DispatchQueue.main.async { [self] in
                 self.newsData = news
-                
-                
+               
+                let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: news)
+                userDefaults.set(encodedData, forKey: "news")
+                userDefaults.synchronize()
+                userDefaults.setValue(true, forKey: "saved")
                 self.tableView.reloadData()
             }
         }

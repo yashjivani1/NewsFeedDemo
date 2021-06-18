@@ -21,6 +21,7 @@
 		75BD4A3F267B9BC100F78806 /* MyGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A3E267B9BC100F78806 /* MyGesture.swift */; };
 		75BD4A41267BA0C000F78806 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A40267BA0C000F78806 /* ZoomViewController.swift */; };
 		75BD4A45267C49E900F78806 /* MonthEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A44267C49E900F78806 /* MonthEnum.swift */; };
+		75BD4A47267C54B500F78806 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD4A46267C54B500F78806 /* ArticleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		75BD4A3E267B9BC100F78806 /* MyGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGesture.swift; sourceTree = "<group>"; };
 		75BD4A40267BA0C000F78806 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		75BD4A44267C49E900F78806 /* MonthEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthEnum.swift; sourceTree = "<group>"; };
+		75BD4A46267C54B500F78806 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		78456B687D1678860D376374 /* Pods-NewsFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsFeed.debug.xcconfig"; path = "Target Support Files/Pods-NewsFeed/Pods-NewsFeed.debug.xcconfig"; sourceTree = "<group>"; };
 		B7AE9E1AE6CC5992F2A5085B /* Pods_NewsFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 			children = (
 				75BD4A37267B868000F78806 /* NewsModel.swift */,
 				75BD4A44267C49E900F78806 /* MonthEnum.swift */,
+				75BD4A46267C54B500F78806 /* ArticleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				75BD4A35267B82DB00F78806 /* NewsTableViewCell.swift in Sources */,
 				75BD4A1F267B811900F78806 /* SceneDelegate.swift in Sources */,
 				75BD4A45267C49E900F78806 /* MonthEnum.swift in Sources */,
+				75BD4A47267C54B500F78806 /* ArticleModel.swift in Sources */,
 				75BD4A38267B868000F78806 /* NewsModel.swift in Sources */,
 				75BD4A3C267B95A300F78806 /* DetailViewController.swift in Sources */,
 				75BD4A3F267B9BC100F78806 /* MyGesture.swift in Sources */,

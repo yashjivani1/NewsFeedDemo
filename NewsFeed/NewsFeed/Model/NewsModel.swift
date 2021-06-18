@@ -4,24 +4,10 @@ import Alamofire
 
 //30fc4844d5af4decbf374616f8eb9d76
 struct NewsModel{
-    var title: String
-    var urlToImage: String
-    var url: String
-    var author: String
-    var publishedAt: String
-    var content: String
-    var description: String
-    static func getData(url: URL, completionHandler: @escaping([NewsModel]) -> Void){
+   
+    static func getData(url: URL, completionHandler: @escaping([ArticleModel]) -> Void){
 
-         var news = [NewsModel]()
-        
-//         let url = URL(string: "https://newsapi.org/v2/everything?q=bitcoin&apiKey=30fc4844d5af4decbf374616f8eb9d76")
-//         guard let urlTemp = url else{
-//             return
-//         }
-//
-//         var request = URLRequest(url: urlTemp)
-//         request.httpMethod = "GET"
+        var news = [ArticleModel]()
         
         let request = AF.request(url)
         
@@ -34,8 +20,8 @@ struct NewsModel{
                     let array = json["articles"].arrayValue
                     for new in array{
                         
-                        
-                        news.append(NewsModel(title: new["title"].rawString()!, urlToImage: new["urlToImage"].rawString()!, url: new["url"].rawString()!, author: new["author"].rawString()!, publishedAt: new["publishedAt"].rawString()!, content: new["content"].rawString()!, description: new["description"].rawString()!))
+                        let article = ArticleModel(title: new["title"].rawString()!, urlToImage: new["urlToImage"].rawString()!, url: new["url"].rawString()!, author: new["author"].rawString()!, publishedAt: new["publishedAt"].rawString()!, content: new["content"].rawString()!, descriptionNews: new["description"].rawString()!)
+                        news.append(ArticleModel(title: new["title"].rawString()!, urlToImage: new["urlToImage"].rawString()!, url: new["url"].rawString()!, author: new["author"].rawString()!, publishedAt: new["publishedAt"].rawString()!, content: new["content"].rawString()!, descriptionNews: new["description"].rawString()!))
                         
                         
                     }
