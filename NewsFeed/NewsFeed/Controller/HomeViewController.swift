@@ -50,7 +50,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         cell.newImageView?.sd_setImage(with: url, completed: nil)
         
         cell.editorName.text = newsData[indexPath.row].author
-        cell.date.text = newsData[indexPath.row].publishedAt
+        //cell.date.text = newsData[indexPath.row].publishedAt
         cell.newLink.isUserInteractionEnabled = true
         
         let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.blue, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue  ] as [NSAttributedString.Key : Any]
@@ -61,8 +61,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         cell.newLink.attributedText = myAttrString
         let tap = MyTapGesture(target: self, action: #selector(linkTapped))
         tap.index = indexPath.row
-        
-        
+        let formattedDate = setDateFormat(date: newsData[indexPath.row].publishedAt)
+        print(formattedDate)
+        cell.date.text = formattedDate
         return cell
     }
     
@@ -100,6 +101,29 @@ extension HomeViewController{
             animated: true)
     }
     
+    func setDateFormat(date: String) -> String {
+        let dateArray = date.components(separatedBy: "-")
+        var dateFormatted = String()
+        print(dateArray[2])
+        dateFormatted = dateArray[2].prefix(2) + " "
+        dateFormatted +=  (MonthEnum(rawValue: dateArray[1])?.description)! + ", "
+        dateFormatted += dateArray[0] + " "
+        
+        let time = date.components(separatedBy: "T")
+       
+        let dateAsString = String(time[1].dropLast())
+            let df = DateFormatter()
+            df.dateFormat = "HH:mm:ss"
+
+            let date = df.date(from: dateAsString)
+            df.dateFormat = "hh:mm a"
+
+            let time12 = df.string(from: date!)
+            print(time12)
+            
+        dateFormatted += time12
+        return dateFormatted
+    }
     
 }
 
